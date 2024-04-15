@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1f2937; /* Ciemniejsze tło */
+    color: #f3f4f6; /* Kolor tekstu */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Inputs-container */
+
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputs-header {
+    margin-top: 2rem;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.todo-input-container,
+.todo-priority-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.todo-input-container label,
+.todo-priority-container label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.todo-input-container input {
+    width: 15rem;
+    height: 2rem;
+    border: 1px solid #374151; /* Ciemniejsze obramowanie */
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: #4b5563; /* Ciemniejsze tło pola input */
+    color: #f3f4f6; /* Kolor tekstu */
+}
+
+.todo-priority-container select {
+    width: 15rem;
+    height: 2rem;
+    border: 1px solid #374151; /* Ciemniejsze obramowanie */
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #4b5563; /* Ciemniejsze tło select */
+    color: #f3f4f6; /* Kolor tekstu */
+}
+
+.todo-input-container input:focus {
+    outline: none;
+}
+
+.add-todo-button {
+    width: 15rem;
+    height: 2rem;
+    background-color: #6b7280;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #f3f4f6; /* Kolor tekstu */
+}
+
+.add-todo-button:hover {
+    background-color: #4b5563;
+}
+
+/* click animation */
+.add-todo-button:active {
+    transform: scale(0.95);
+}
+
+/* Table container */
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 70%;
+}
+
+.table-header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #374151; /* Ciemniejsze tło nagłówka */
+    padding: 1rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 2px solid #000000;
+}
+
+.table-header-container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: italic;
+    color: #f3f4f6; /* Kolor tekstu */
+}
+
+.table-header-buttons-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.table-header-buttons-container button {
+    width: 6rem;
+    font-size: 1rem;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    color: #f3f4f6; /* Kolor tekstu */
+}
+
+/* efekt na przycisk kiedy najedziemy to linia przesuwa się od lewje do prawej */
+.table-header-buttons-container button::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f9fafb; /* Kolor linii */
+    transition: width 0.5s ease;
+}
+
+.table-header-buttons-container button:hover::before {
+    width: 100%;
+}
+
+.table-main-section-container {
+    width: 100%;
+    background-color: #4b5563; /* Ciemniejsze tło sekcji głównej */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 1rem;
+}
+
+/* Table */
+.table-main-section-container table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.table-main-section-container table thead {
+    background-color: #374151; /* Ciemniejsze tło nagłówków */
+    color: #f3f4f6; /* Kolor tekstu */
+}
+
+.table-main-section-container table th,
+.table-main-section-container table td {
+    border: 1px solid #000000;
+    padding: 0.5rem;
+    text-align: center;
+    width: 40%;
+}
+
+.table-main-section-container table th {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.table-main-section-container table td {
+    font-size: 1rem;
+    background-color: #1f2937; /* Ciemniejsze tło komórek */
+    color: #f3f4f6; /* Kolor tekstu */
+}
+
+/* Styl dla wszystkich przycisków w tabeli */
+.table-main-section-container button {
+    width: 5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 2px;
+}
+
+/* Dodatkowe style dla przycisków, jeśli to konieczne */
+.table-main-section-container button.table-delete-button {
+    background-color: #dc2626;
+}
+
+.table-main-section-container button.table-update-button {
+    background-color: #2563eb;
+}
+
+.table-main-section-container button.table-done-button {
+    background-color: #34d399;
+}
+
+/* Hover i click animation dla wszystkich przycisków */
+.table-main-section-container button:hover {
+    transform: scale(1.05);
+}
+
+.table-main-section-container button:active {
+    transform: scale(0.95);
+}
+
+
+/* Dla ekranów o szerokości mniejszej niż 768px */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 90%; /* Zmniejszenie szerokości kontenera */
+    }
+
+    .inputs-container{
+        width: 90%; /* Zmniejszenie szerokości kontenera */
+    }
+
+    .todo-container{
+        flex-wrap: wrap; /* Zmiana układu elementów na wrap */
+    }
+
+    /* Table */
+    .table-container {
+        width: 90%; /* Zmniejszenie szerokości kontenera */
+    }
+
+    .table-main-section-container table th,
+    .table-main-section-container table td {
+        width: 100%; /* Zmiana szerokości komórek */
+    }
+
+    .table-main-section-container thead tr th{
+        font-size: 0.9rem; /* Zmniejszenie rozmiaru czcionki */
+    }
+
+    .table-main-section-container tbody tr td{
+        font-size: 0.8rem; /* Zmniejszenie rozmiaru czcionki */
+    }
+
+    .table-main-section-container button {
+        width: 100%; /* Zmiana szerokości przycisków */
+    }
+
+    .table-header-buttons-container button {
+        font-size: 0.8rem; /* Zmniejszenie rozmiaru czcionki */
+    }
+
+    .table-header-buttons-container button::before {
+        height: 1px; /* Zmniejszenie wysokości linii */
+    }
+
+    .table-header-container h2 {
+        font-size: 1.5rem; /* Zmniejszenie rozmiaru czcionki */
+    }
+    
+    .table-main-section-container button {
+        font-size: 0.8rem; /* Zmniejszenie rozmiaru czcionki */
+    }
+
+
+    
+
+    
+}
